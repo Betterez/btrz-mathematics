@@ -1,0 +1,44 @@
+{
+  "name": "btrz-mathematics",
+  "version": "1.0.0",
+  "description": "Betterez Mathematics",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test multi='xunit=test-results/xunit.xml spec=-' node_modules/istanbul-harmony/lib/cli.js cover node_modules/mocha/bin/_mocha -- --ui bdd -R mocha-multi -t 5000",
+    "test-w": "NODE_ENV=test node_modules/mocha/bin/mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Betterez/btrz-mathematics.git"
+  },
+  "keywords": [
+    "mathematics",
+    "io.js"
+  ],
+  "author": {
+    "name": "hgarcia",
+    "email": "hernan@dynamicprogrammer.com"
+  },
+  "contributors": [{
+    "name": "pbrudnick",
+    "email": "pbrudnick@gmail.com"
+  }],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Betterez/btrz-mathematics/blob/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Betterez/btrz-mathematics/issues"
+  },
+  "homepage": "https://github.com/Betterez/btrz-mathematics",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "istanbul-harmony": "latest",
+    "mocha": "latest",
+    "mocha-multi": "latest"
+  }
+}
