@@ -2,13 +2,8 @@
 
 describe("Mathematics", function () {
 
-  let Mathematics = require("../src/mathematics");
+  let mathematics = require("../src/mathematics");
   let expect = require("chai").expect;
-  let mathematics;
-  
-  beforeEach(function () {
-    mathematics = new Mathematics();
-  });
 
   it("should convert to money", function () {
     expect(mathematics.toMoney(32.30)).to.eql(3230000);

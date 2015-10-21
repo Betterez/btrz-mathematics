@@ -28,15 +28,15 @@ function addZeroes(value, size) {
 
 class Mathematics {
 
-  toPercentage(value) {
+  static toPercentage(value) {
     return addZeroes(this.round(value, 3), 3);
   }
 
-  toMoney(value) {
+  static toMoney(value) {
     return addZeroes(this.round(value, 5), 5);
   }
 
-  percentage(base, percentile, rounding) {
+  static percentage(base, percentile, rounding) {
     if (!rounding) { rounding = {decimals: 2, policy: 'default'}; }
     let fixedPercentile = getCorrectedPercentile(percentile);
     let calculated = (base * (fixedPercentile / (100 * DOLLAR_MULTIPLIER)));
@@ -44,12 +44,12 @@ class Mathematics {
     return Number(this.toMoney(rounded));
   }
 
-  roundMoney(value, digits, roundingPolicy) {
+  static roundMoney(value, digits, roundingPolicy) {
     if (digits === undefined || digits === null || digits === '') { digits = 2; }
     return this.round(value, digits, DOLLAR_MULTIPLIER, roundingPolicy);
   }
 
-  round(value, digits, divisor, roundingPolicy) {
+  static round(value, digits, divisor, roundingPolicy) {
     if (digits === undefined || digits === null) { digits = 2; }
     if (!divisor) { divisor = 1; }
     if (!roundingPolicy) { roundingPolicy = 'default'; }
