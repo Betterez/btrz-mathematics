@@ -2,7 +2,7 @@
 
 describe("Mathematics", function () {
 
-  let Mathematics = require("../src/mathematics").Mathematics;
+  let Mathematics = require("../src/mathematics");
   let expect = require("chai").expect;
   let mathematics;
   

@@ -105,4 +105,4 @@ class Mathematics {
   }
 }
 
-exports.Mathematics = Mathematics;
+module.exports = Mathematics;
