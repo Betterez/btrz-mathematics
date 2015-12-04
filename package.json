@@ -1,11 +1,12 @@
 {
   "name": "btrz-mathematics",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Betterez Mathematics",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test multi='xunit=test-results/xunit.xml spec=-' node_modules/istanbul-harmony/lib/cli.js cover node_modules/mocha/bin/_mocha -- --ui bdd -R mocha-multi -t 5000",
-    "test-w": "NODE_ENV=test node_modules/mocha/bin/mocha -w"
+    "test": "NODE_ENV=test multi='xunit=test-results/xunit.xml spec=-' node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- --ui bdd -R mocha-multi -t 5000",
+    "test-w": "NODE_ENV=test node_modules/mocha/bin/mocha -w",
+    "publish": "publish"
   },
   "repository": {
     "type": "git",
@@ -19,26 +20,23 @@
     "name": "hgarcia",
     "email": "hernan@dynamicprogrammer.com"
   },
-  "contributors": [{
-    "name": "pbrudnick",
-    "email": "pbrudnick@gmail.com"
-  }],
-  "licenses": [
+  "contributors": [
     {
-      "type": "MIT",
-      "url": "https://github.com/Betterez/btrz-mathematics/blob/master/LICENSE"
+      "name": "pbrudnick",
+      "email": "pbrudnick@gmail.com"
     }
   ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Betterez/btrz-mathematics/issues"
   },
   "homepage": "https://github.com/Betterez/btrz-mathematics",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "^3.0.0",
-    "istanbul-harmony": "latest",
+    "istanbul": "^0.4.1",
     "mocha": "latest",
-    "mocha-multi": "latest"
+    "mocha-multi": "latest",
+    "publish": "^0.5.0"
   }
 }
