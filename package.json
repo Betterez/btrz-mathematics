@@ -4,7 +4,7 @@
   "description": "Betterez Mathematics",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test node_modules/mocha/bin/mocha -- --ui bdd -R mocha-multi -t 5000",
+    "test": "NODE_ENV=test node_modules/mocha/bin/mocha -- --ui bdd -t 5000",
     "test-w": "NODE_ENV=test node_modules/mocha/bin/mocha -w"
   },
   "repository": {
