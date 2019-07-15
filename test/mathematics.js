@@ -109,4 +109,39 @@ describe("Mathematics", function () {
   it("should round 90 cents with precision 0 and down", function () {
     expect(mathematics.round(99567, 0, 100000, "down")).to.be.eql("0.00");
   });
+
+  describe("boder cases for positive and negative zeros", () => {
+    it("should round negative zero to 0.00 with precision 0", function () {
+      expect(mathematics.round(0.33, 0)).to.be.eql("0.00");
+    });
+
+    it("should round negative zero to 0.00 with precision 0", function () {
+      expect(mathematics.round(-0.33, 0)).to.be.eql("0.00");
+    });
+
+    it("should round to -1.00 with precision 2", function () {
+      expect(mathematics.round(-0.9974999999999999, 2)).to.be.eql("-1.00");
+    });
+
+    it("should round to -2.00 with precision 2", function () {
+      expect(mathematics.round(-1.9974999999999999, 2)).to.be.eql("-2.00");
+    });
+
+    it("should round to -1.10 with precision 2", function () {
+      expect(mathematics.round(-1.09725, 2)).to.be.eql("-1.10");
+    });
+
+    it("should round to -1.01 with precision 2", function () {
+      expect(mathematics.round(-1.009725, 2)).to.be.eql("-1.01");
+    });
+
+    it("should round to 0.00 with precision 2", function () {
+      expect(mathematics.round(0.00333, 2)).to.be.eql("0.00");
+    });
+
+    it("should round negative zero to 0.00 with precision 2", function () {
+      expect(mathematics.round(-0.00333, 2)).to.be.eql("0.00");
+    });
+  });
+
 });

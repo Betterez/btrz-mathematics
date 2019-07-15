@@ -26,6 +26,25 @@ function addZeroes(value, size) {
   return Number(whole + cents + pad);
 }
 
+function isNegativeZero(x) {
+  return ( 1 / x ) === -Infinity;
+}
+
+function addOne(whole) {
+  const numWhole = Number(whole);
+  if (numWhole !== 0) {
+    return numWhole > 0 ? numWhole + 1 : numWhole - 1;
+  }
+  return isNegativeZero(whole) ? numWhole - 1 : numWhole + 1;
+}
+
+function wholePlusDigits(whole, digits = '00') {
+  if (Number(whole) !== 0) {
+    return `${whole}.${digits}`
+  }
+  return `0.${digits}`;
+}
+
 class Mathematics {
 
   static toPercentage(value) {
@@ -69,10 +88,10 @@ class Mathematics {
 
     if (digits == 0) {
       flip = cents.substr((digits), 1);
-      if ((flip < 5) || roundingPolicy === 'down') { return whole + '.00'; }
+      if ((flip < 5) || roundingPolicy === 'down') { return wholePlusDigits(whole); }
       if ((flip > 4) || roundingPolicy === 'up') {
-        whole = Number(whole) + 1;
-        return whole + '.00';
+        whole = addOne(whole);
+        return wholePlusDigits(whole);
       }
     }
 
@@ -90,8 +109,8 @@ class Mathematics {
         roundedCents = zeroes + roundedCents;
       }
       if (roundedCents === 100){
-        whole = Number(whole) + 1;
-        return whole + '.00';
+        whole = addOne(whole);
+        return wholePlusDigits(whole);
       }
     } 
     else {
@@ -101,7 +120,7 @@ class Mathematics {
       }
     }
 
-    return whole + '.' + roundedCents;
+    return wholePlusDigits(whole, roundedCents);
   }
 }
 
