@@ -42,7 +42,7 @@ function wholePlusDigits(whole, digits = '00') {
   if (Number(whole) !== 0) {
     return `${whole}.${digits}`
   }
-  return `0.${digits}`;
+  return isNegativeZero(whole) && digits != 0 ? `-0.${digits}` : `0.${digits}`;
 }
 
 class Mathematics {

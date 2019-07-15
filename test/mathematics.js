@@ -142,6 +142,10 @@ describe("Mathematics", function () {
     it("should round negative zero to 0.00 with precision 2", function () {
       expect(mathematics.round(-0.00333, 2)).to.be.eql("0.00");
     });
+
+    it("should round to same negative number with 5 digits", function () {
+      expect(mathematics.round(-0.02, 5)).to.be.eql("-0.02000");
+    });
   });
 
 });
