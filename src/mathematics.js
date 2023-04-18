@@ -45,6 +45,13 @@ function wholePlusDigits(whole, digits = '00') {
   return isNegativeZero(whole) && digits != 0 ? `-0.${digits}` : `0.${digits}`;
 }
 
+function hundredCents(digits) {
+  let zeroes = "";
+  while (zeroes.length < digits) {
+    zeroes += "0";
+  }
+  return Number(`1${zeroes}`);
+}
 class Mathematics {
 
   static toPercentage(value) {
@@ -108,7 +115,7 @@ class Mathematics {
         }
         roundedCents = zeroes + roundedCents;
       }
-      if (roundedCents === 100){
+      if (roundedCents === hundredCents(digits)){
         whole = addOne(whole);
         return wholePlusDigits(whole);
       }
@@ -124,4 +131,7 @@ class Mathematics {
   }
 }
 
-module.exports = Mathematics;
+try {
+  module.exports = Mathematics;
+} catch (e) {
+}

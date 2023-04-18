@@ -4,8 +4,12 @@
   "description": "Betterez Mathematics",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test node_modules/mocha/bin/mocha --ui bdd -t 5000",
-    "test-w": "NODE_ENV=test node_modules/mocha/bin/mocha -w"
+    "test": "NODE_ENV=test mocha -- --ui bdd -t 5000 --exit",
+    "test-w": "NODE_ENV=test mocha -w -t 5000",
+    "transpile": "babel -d lib/ src/",
+    "commit-transpile": "git add lib/ && git commit --allow-empty -m \"transpiled src\"",
+    "preversion": "npm test && npm run transpile && npm run commit-transpile",
+    "postversion": "git push origin master && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -32,7 +36,10 @@
   "homepage": "https://github.com/Betterez/btrz-mathematics",
   "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "^7.15.8",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
     "chai": "^3.0.0",
-    "mocha": "latest"
+    "mocha": "10.2.0"
   }
 }

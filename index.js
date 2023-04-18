@@ -1,1 +1,1 @@
-module.exports = require("./src/mathematics");
+module.exports = require("./lib/mathematics");

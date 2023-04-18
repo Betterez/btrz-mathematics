@@ -5,8 +5,15 @@ describe("Mathematics", function () {
   let mathematics = require("../src/mathematics");
   let expect = require("chai").expect;
 
-  it("should convert to money", function () {
-    expect(mathematics.toMoney(32.30)).to.eql(3230000);
+  describe("toMoney", () => {
+    it("should convert to money", function () {
+      expect(mathematics.toMoney(32.30)).to.eql(3230000);
+    });
+
+    it("should round properly", function () {
+      const tricky = 296.99999999999994;
+      expect(mathematics.toMoney(tricky)).to.eql(29700000);
+    });
   });
 
   it("should convert to percentage", function () {

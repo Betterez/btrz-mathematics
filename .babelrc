@@ -1,0 +1,10 @@
+{
+    "assumptions": {
+        "noClassCalls": true
+      },
+    "presets": [
+      [
+        "@babel/preset-env"
+      ]
+    ]
+}
