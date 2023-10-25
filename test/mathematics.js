@@ -93,6 +93,14 @@ describe("Mathematics", function () {
     expect(mathematics.roundMoney(1049567)).to.be.eql("10.50");
   });
 
+  it("should round without decimals and down", function () {
+    expect(mathematics.roundMoney(1069567, 0, "nocents")).to.be.eql("10.00");
+  });
+
+  it("should round without decimals and down", function () {
+    expect(mathematics.roundMoney(1019567, 0, "nocents")).to.be.eql("10.00");
+  });
+
   it("should round with decimals a less than zero non round value", function () {
     expect(mathematics.roundMoney(49567)).to.be.eql("0.50");
   });

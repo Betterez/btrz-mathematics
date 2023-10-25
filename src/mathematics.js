@@ -93,6 +93,10 @@ class Mathematics {
       centsLength = cents.length;
     }
 
+    if (roundingPolicy === "nocents") {
+      return wholePlusDigits(whole);
+    }
+
     if (digits == 0) {
       flip = cents.substr((digits), 1);
       if ((flip < 5) || roundingPolicy === 'down') { return wholePlusDigits(whole); }
